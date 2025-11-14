@@ -1,9 +1,9 @@
 void setup() {
   pinMode(7,INPUT);
+  Serial.begin(9600);
 }
 
 void loop(){
-    Serial.begin(9600);
     int sensor = 1;
     int state = 0;
 
