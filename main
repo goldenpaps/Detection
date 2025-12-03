@@ -1,0 +1,33 @@
+int first = 0; //to check if it is the first iteration of the detection code. if so, initialize
+int main(){
+  init();
+
+  int sensor = 0;
+  int state = 0;
+
+  if (first == 0){
+  DDRD  |= (0x03);
+ 
+  cli();
+
+  sei();
+  first =1;
+  }
+  else{
+  
+  }
+
+ISR(PCINT_vect){
+  int sensor = 0;
+  int state = 0;
+ if (sensor == 1 && state == 0){
+    state = 1;
+    PORTB |= (0x03);
+ }
+  else if (sensor == 1 && state == 1){}
+
+  else{
+    PORTB ^= 0x02;
+  }
+}
+}
