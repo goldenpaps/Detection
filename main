@@ -6,11 +6,11 @@ int main(){
   int state = 0;
 
   if (first == 0){
-  DDRD  |= (0x03);
+  DDRD  |= (0x03); //using pin 2 for pir interrupt and pin 3 for the led. led is just for testing in this stage.
  
-  cli();
+  cli(); //
 
-  sei();
+  sei(); //enable interrupts
   first =1;
   }
   else{
